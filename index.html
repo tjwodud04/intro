@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jae Young Suh — Portfolio</title>
+  <meta name="description" content="Jae Young Suh — AI/LLM • Emotion-aware Conversational Systems • Multimodal Agents" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --fg: #0f172a; /* slate-900 */
+      --muted: #475569; /* slate-600 */
+      --accent: #111827; /* gray-900 */
+      --line: #e5e7eb; /* gray-200 */
+      --card: #fafafa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0f19;
+        --fg: #e5e7eb;
+        --muted: #9ca3af;
+        --accent: #f3f4f6;
+        --line: #111827;
+        --card: #0e1424;
+      }
+    }
+    html, body { height: 100%; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--fg);
+      background: var(--bg);
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Grid Layout */
+    .page {
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
+      gap: 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px 120px;
+      box-sizing: border-box;
+    }
+
+    /* Left profile column */
+    .profile {
+      position: sticky;
+      top: 24px;
+      align-self: start;
+    }
+    .avatar {
+      width: 180px; height: 180px;
+      border-radius: 9999px;
+      overflow: hidden;
+      border: 4px solid var(--line);
+      box-shadow: 0 12px 30px rgba(0,0,0,.08);
+      margin: 0 auto 16px;
+      display: grid; place-items: center;
+      background: var(--card);
+    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .icon-row {
+      display: flex; justify-content: center; gap: 14px; margin: 10px 0 18px;
+    }
+    .icon-btn {
+      width: 44px; height: 44px; border-radius: 9999px; border: 1px solid var(--line);
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--bg);
+      transition: transform .12s ease, background .15s ease, box-shadow .2s ease;
+      box-shadow: 0 1px 0 rgba(0,0,0,.04);
+    }
+    .icon-btn:hover { transform: translateY(-2px); background: var(--card); text-decoration: none; }
+    .icon-btn svg { width: 20px; height: 20px; fill: currentColor; }
+
+    .name { text-align: center; font-weight: 800; font-size: 22px; letter-spacing: .2px; }
+    .muted { text-align: center; color: var(--muted); margin-top: 2px; font-size: 14px; }
+
+    .cv-link { display: block; margin: 18px auto 0; width: fit-content; }
+    .btn {
+      font-weight: 600; font-size: 14px; letter-spacing: .2px;
+      padding: 10px 14px; border-radius: 9999px; border: 1px solid var(--line);
+      background: var(--bg);
+      box-shadow: 0 2px 0 rgba(0,0,0,.05);
+    }
+    .btn:hover { background: var(--card); text-decoration: none; }
+
+    /* Right content */
+    .content { min-width: 0; }
+    section { padding: 24px 0; border-bottom: 1px solid var(--line); }
+    section:last-of-type { border-bottom: none; }
+    .h1 { font-size: 28px; font-weight: 800; margin: 0 0 12px; letter-spacing: .2px; }
+    .h2 { font-size: 20px; font-weight: 700; margin: 0 0 8px; }
+    p { margin: 0 0 10px; }
+    ul { margin: 10px 0 0 20px; }
+
+    /* Publication / Project cards */
+    .item {
+      padding: 14px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg);
+      margin: 12px 0; box-shadow: 0 1px 0 rgba(0,0,0,.03);
+    }
+    .item .title { font-weight: 700; }
+    .item .meta { color: var(--muted); font-size: 14px; margin-top: 4px; }
+    .item a.title:hover { text-decoration: underline; }
+
+    /* Floating right nav */
+    .toc {
+      position: fixed; right: 18px; top: 24px; z-index: 40;
+      border: 1px solid var(--line); border-radius: 14px; background: var(--bg);
+      padding: 10px 12px; box-shadow: 0 8px 30px rgba(0,0,0,.08);
+    }
+    .toc h4 { margin: 0 0 8px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+    .toc a { display: block; padding: 6px 6px; font-size: 14px; border-radius: 8px; }
+    .toc a:hover { background: var(--card); text-decoration: none; }
+
+    /* Small screens */
+    @media (max-width: 980px) {
+      .page { grid-template-columns: 1fr; gap: 24px; padding-top: 24px; }
+      .profile { position: static; }
+      .toc { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating right navigation -->
+  <nav class="toc" aria-label="Section navigation">
+    <h4>NAV</h4>
+    <a href="#about">About me</a>
+    <a href="#experience">Experience</a>
+    <a href="#publications">Publications</a>
+    <a href="#projects">Projects</a>
+  </nav>
+
+  <main class="page">
+    <!-- Left column: profile -->
+    <aside class="profile" aria-label="Profile">
+      <div class="avatar" aria-hidden="true">
+        <!-- Replace with your headshot path -->
+        <img src="assets/profile.jpg" alt="Portrait of Jae Young Suh" />
+      </div>
+
+      <div class="icon-row" aria-label="Profile links">
+        <!-- Google Scholar -->
+        <a class="icon-btn" href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 8l11 6 9-4.91V17h2V8L12 2zm0 8.7L4.62 8 12 3.96 19.38 8 12 10.7zM3 19.5C3 17.57 7.03 16 12 16s9 1.57 9 3.5S16.97 23 12 23s-9-1.57-9-3.5zm2 0c0 .86 2.91 2 7 2s7-1.14 7-2-2.91-2-7-2-7 1.14-7 2z"/></svg>
+        </a>
+        <!-- LinkedIn -->
+        <a class="icon-btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.6c0-1.34-.02-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7H9.32V9h3.41v1.56h.05c.48-.9 1.66-1.85 3.42-1.85 3.66 0 4.34 2.41 4.34 5.54v6.2zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+        <!-- Hugging Face -->
+        <a class="icon-btn" href="https://huggingface.co/" target="_blank" rel="noopener noreferrer" title="Hugging Face" aria-label="Hugging Face">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7v1.5A6.5 6.5 0 0 0 11.5 17h1A6.5 6.5 0 0 0 19 10.5V9a7 7 0 0 0-7-7zm-2.8 8.2a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6zm5.6 0a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6zM8.5 14.2c1.8-1 5.2-1 7 0 .4.2.6.7.4 1.1-.2.4-.7.6-1.1.4-1.2-.7-4.4-.7-5.6 0-.4.2-.9 0-1.1-.4-.2-.4 0-.9.4-1.1z"/></svg>
+        </a>
+        <!-- Email -->
+        <a class="icon-btn" href="mailto:your.name@email.com" title="Email" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+
+      <div class="name">Jae Young Suh (서재영)</div>
+      <div class="muted">AI / LLM • Emotion-aware Conversational Systems • Multimodal Agents</div>
+
+      <a class="cv-link btn" href="assets/Jae-Young-Suh-CV.pdf" target="_blank" rel="noopener">View CV (PDF)</a>
+    </aside>
+
+    <!-- Right column: content -->
+    <div class="content">
+      <section id="about" aria-labelledby="about-h">
+        <h1 class="h1" id="about-h">About me</h1>
+        <p>
+          I build conversational systems that feel more <em>human‑aware</em>—combining LLMs, speech, and visual embodiment
+          to support emotionally resonant interactions. Recent work explores voice‑based agents with Whisper + GPT‑4o and
+          Live2D, negotiation persona simulations, and domain‑specific assistants (e.g., tourism).
+        </p>
+      </section>
+
+      <section id="experience" aria-labelledby="exp-h">
+        <h1 class="h1" id="exp-h">Experience</h1>
+        <div class="item">
+          <div class="title">Senior AI Engineer — AIO2O</div>
+          <div class="meta">LLM apps, multimodal prototypes, retrieval, evaluation harness • 2022–2025</div>
+          <p>Built PoCs for voice agents, domain‑adaptive training, and itinerary assistants; led prompt/design iterations and latency reduction.</p>
+        </div>
+        <!-- Add more roles using the same .item block -->
+      </section>
+
+      <section id="publications" aria-labelledby="pub-h">
+        <h1 class="h1" id="pub-h">Publications</h1>
+        <!-- Example item matching the requested style (title → authors → venue) -->
+        <div class="item">
+          <a class="title" href="#" target="_blank" rel="noopener">PanicToCalm: A Proactive Counseling Agent for Panic Attacks</a>
+          <div class="meta">Jihyun Lee, Yejin Min, San Kim, Yejin Jeon, SungJun Yang, Hyounghun Kim, Gary Lee</div>
+          <div class="meta">Proceedings of EMNLP 2025</div>
+        </div>
+        <!-- Duplicate the .item block for each publication -->
+      </section>
+
+      <section id="projects" aria-labelledby="proj-h">
+        <h1 class="h1" id="proj-h">Projects</h1>
+        <div class="item">
+          <a class="title" href="#" target="_blank" rel="noopener">Voice‑based Emotion AI Agent</a>
+          <div class="meta">Whisper • GPT‑4o • Live2D • Streamlit/Vercel</div>
+          <p>Prototype for an emotion‑aware, embodied assistant; explores latency controls and persona consistency.</p>
+        </div>
+        <div class="item">
+          <a class="title" href="#" target="_blank" rel="noopener">Tour_Recommend_Toy_Project</a>
+          <div class="meta">KTO TourAPI • LLM Retrieval • Card UI</div>
+          <p>Domain‑specific travel assistant for Korean tourism with succinct card‑style answers and source links.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // Optional: highlight active section in the floating nav
+    (function(){
+      const links = Array.from(document.querySelectorAll('.toc a'));
+      const map = new Map(links.map(a => [document.querySelector(a.getAttribute('href')), a]));
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          const a = map.get(entry.target);
+          if (!a) return;
+          if (entry.isIntersecting) {
+            links.forEach(l => l.style.fontWeight = '500');
+            a.style.fontWeight = '800';
+          }
+        });
+      }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.01 });
+      map.forEach((_, el) => el && observer.observe(el));
+    })();
+  </script>
+</body>
+</html>
