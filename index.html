@@ -4,90 +4,38 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jae Young Suh — Portfolio</title>
-  <meta name="description" content="Jae Young Suh — AI/LLM • Emotion-aware Conversational Systems • Multimodal Agents" />
+  <meta name="description" content="Jae Young Suh — GitHub Pages" />
   <style>
     :root {
-      --bg: #ffffff;
-      --fg: #0f172a; /* slate-900 */
-      --muted: #475569; /* slate-600 */
-      --accent: #111827; /* gray-900 */
-      --line: #e5e7eb; /* gray-200 */
-      --card: #fafafa;
+      --bg: #ffffff; --fg: #0f172a; --muted: #475569; --accent: #111827; --line: #e5e7eb; --card: #fafafa;
     }
     @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b0f19;
-        --fg: #e5e7eb;
-        --muted: #9ca3af;
-        --accent: #f3f4f6;
-        --line: #111827;
-        --card: #0e1424;
-      }
+      :root { --bg:#0b0f19; --fg:#e5e7eb; --muted:#9ca3af; --accent:#f3f4f6; --line:#111827; --card:#0e1424; }
     }
     html, body { height: 100%; }
     html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font: 16px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--fg);
-      background: var(--bg);
-    }
+    body { margin: 0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial; color: var(--fg); background: var(--bg); }
     a { color: inherit; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     /* Grid Layout */
-    .page {
-      display: grid;
-      grid-template-columns: 320px minmax(0, 1fr);
-      gap: 48px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 24px 120px;
-      box-sizing: border-box;
-    }
+    .page { display: grid; grid-template-columns: 320px minmax(0,1fr); gap: 48px; max-width: 1200px; margin: 0 auto; padding: 40px 24px 120px; box-sizing: border-box; }
 
     /* Left profile column */
-    .profile {
-      position: sticky;
-      top: 24px;
-      align-self: start;
-    }
-    .avatar {
-      width: 180px; height: 180px;
-      border-radius: 9999px;
-      overflow: hidden;
-      border: 4px solid var(--line);
-      box-shadow: 0 12px 30px rgba(0,0,0,.08);
-      margin: 0 auto 16px;
-      display: grid; place-items: center;
-      background: var(--card);
-    }
+    .profile { position: sticky; top: 24px; align-self: start; }
+    .avatar { width: 180px; height: 180px; border-radius: 9999px; overflow: hidden; border: 4px solid var(--line); box-shadow: 0 12px 30px rgba(0,0,0,.08); margin: 0 auto 16px; display: grid; place-items: center; background: var(--card); }
     .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-    .icon-row {
-      display: flex; justify-content: center; gap: 14px; margin: 10px 0 18px;
-    }
-    .icon-btn {
-      width: 44px; height: 44px; border-radius: 9999px; border: 1px solid var(--line);
-      display: inline-flex; align-items: center; justify-content: center;
-      background: var(--bg);
-      transition: transform .12s ease, background .15s ease, box-shadow .2s ease;
-      box-shadow: 0 1px 0 rgba(0,0,0,.04);
-    }
+    .icon-row { display: flex; justify-content: center; gap: 14px; margin: 10px 0 18px; }
+    .icon-btn { width: 44px; height: 44px; border-radius: 9999px; border: 1px solid var(--line); display: inline-flex; align-items: center; justify-content: center; background: var(--bg); transition: transform .12s ease, background .15s ease, box-shadow .2s ease; box-shadow: 0 1px 0 rgba(0,0,0,.04); }
     .icon-btn:hover { transform: translateY(-2px); background: var(--card); text-decoration: none; }
     .icon-btn svg { width: 20px; height: 20px; fill: currentColor; }
-
+    .icon-btn img { width: 20px; height: 20px; display: block; }
     .name { text-align: center; font-weight: 800; font-size: 22px; letter-spacing: .2px; }
-    .muted { text-align: center; color: var(--muted); margin-top: 2px; font-size: 14px; }
 
-    .cv-link { display: block; margin: 18px auto 0; width: fit-content; }
-    .btn {
-      font-weight: 600; font-size: 14px; letter-spacing: .2px;
-      padding: 10px 14px; border-radius: 9999px; border: 1px solid var(--line);
-      background: var(--bg);
-      box-shadow: 0 2px 0 rgba(0,0,0,.05);
-    }
+    .btn { font-weight: 600; font-size: 14px; letter-spacing: .2px; padding: 10px 14px; border-radius: 9999px; border: 1px solid var(--line); background: var(--bg); box-shadow: 0 2px 0 rgba(0,0,0,.05); }
     .btn:hover { background: var(--card); text-decoration: none; }
+
+    .cv-group { display: flex; gap: 10px; justify-content: center; margin-top: 18px; }
 
     /* Right content */
     .content { min-width: 0; }
@@ -96,33 +44,28 @@
     .h1 { font-size: 28px; font-weight: 800; margin: 0 0 12px; letter-spacing: .2px; }
     .h2 { font-size: 20px; font-weight: 700; margin: 0 0 8px; }
     p { margin: 0 0 10px; }
-    ul { margin: 10px 0 0 20px; }
+    ul { margin: 8px 0 0 20px; }
 
-    /* Publication / Project cards */
-    .item {
-      padding: 14px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg);
-      margin: 12px 0; box-shadow: 0 1px 0 rgba(0,0,0,.03);
-    }
+    /* Card items */
+    .item { padding: 14px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); margin: 12px 0; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
     .item .title { font-weight: 700; }
     .item .meta { color: var(--muted); font-size: 14px; margin-top: 4px; }
-    .item a.title:hover { text-decoration: underline; }
+    .item .date { color: var(--muted); font-size: 13px; margin-top: 4px; }
+    .item .tech { color: var(--muted); font-size: 12px; margin-top: 8px; }
+
+    /* Experience layout */
+    .roleline { display: flex; gap: 8px; flex-wrap: wrap; align-items: baseline; margin-top: 2px; }
+    .role { font-weight: 600; }
+    .period { color: var(--muted); font-size: 13px; }
 
     /* Floating right nav */
-    .toc {
-      position: fixed; right: 18px; top: 24px; z-index: 40;
-      border: 1px solid var(--line); border-radius: 14px; background: var(--bg);
-      padding: 10px 12px; box-shadow: 0 8px 30px rgba(0,0,0,.08);
-    }
+    .toc { position: fixed; right: 18px; top: 24px; z-index: 40; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); padding: 10px 12px; box-shadow: 0 8px 30px rgba(0,0,0,.08); }
     .toc h4 { margin: 0 0 8px; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
     .toc a { display: block; padding: 6px 6px; font-size: 14px; border-radius: 8px; }
     .toc a:hover { background: var(--card); text-decoration: none; }
 
     /* Small screens */
-    @media (max-width: 980px) {
-      .page { grid-template-columns: 1fr; gap: 24px; padding-top: 24px; }
-      .profile { position: static; }
-      .toc { display: none; }
-    }
+    @media (max-width: 980px) { .page { grid-template-columns: 1fr; gap: 24px; padding-top: 24px; } .profile { position: static; } .toc { display: none; } }
   </style>
 </head>
 <body>
@@ -139,85 +82,150 @@
     <!-- Left column: profile -->
     <aside class="profile" aria-label="Profile">
       <div class="avatar" aria-hidden="true">
-        <!-- Replace with your headshot path -->
-        <img src="assets/profile.jpg" alt="Portrait of Jae Young Suh" />
+        <img src="img/character_img.jpg" alt="Portrait of Jae Young Suh" />
       </div>
 
       <div class="icon-row" aria-label="Profile links">
         <!-- Google Scholar -->
-        <a class="icon-btn" href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer" title="Google Scholar" aria-label="Google Scholar">
+        <a class="icon-btn" href="https://scholar.google.com/citations?user=QpEwMCwAAAAJ&hl=ko" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 8l11 6 9-4.91V17h2V8L12 2zm0 8.7L4.62 8 12 3.96 19.38 8 12 10.7zM3 19.5C3 17.57 7.03 16 12 16s9 1.57 9 3.5S16.97 23 12 23s-9-1.57-9-3.5zm2 0c0 .86 2.91 2 7 2s7-1.14 7-2-2.91-2-7-2-7 1.14-7 2z"/></svg>
         </a>
         <!-- LinkedIn -->
-        <a class="icon-btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+        <a class="icon-btn" href="https://www.linkedin.com/in/jaeyoungsuh/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.6c0-1.34-.02-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7H9.32V9h3.41v1.56h.05c.48-.9 1.66-1.85 3.42-1.85 3.66 0 4.34 2.41 4.34 5.54v6.2zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
         </a>
-        <!-- Hugging Face -->
-        <a class="icon-btn" href="https://huggingface.co/" target="_blank" rel="noopener noreferrer" title="Hugging Face" aria-label="Hugging Face">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7v1.5A6.5 6.5 0 0 0 11.5 17h1A6.5 6.5 0 0 0 19 10.5V9a7 7 0 0 0-7-7zm-2.8 8.2a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6zm5.6 0a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6zM8.5 14.2c1.8-1 5.2-1 7 0 .4.2.6.7.4 1.1-.2.4-.7.6-1.1.4-1.2-.7-4.4-.7-5.6 0-.4.2-.9 0-1.1-.4-.2-.4 0-.9.4-1.1z"/></svg>
+        <!-- Hugging Face (PNG logo) -->
+        <a class="icon-btn" href="https://huggingface.co/dddsaty" target="_blank" rel="noopener" title="Hugging Face" aria-label="Hugging Face">
+          <img src="img/hf-logo.png" alt="Hugging Face" />
         </a>
         <!-- Email -->
-        <a class="icon-btn" href="mailto:your.name@email.com" title="Email" aria-label="Email">
+        <a class="icon-btn" href="mailto:tjwodud04@gmail.com" title="Email" aria-label="Email">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
       </div>
 
       <div class="name">Jae Young Suh (서재영)</div>
-      <div class="muted">AI / LLM • Emotion-aware Conversational Systems • Multimodal Agents</div>
 
-      <a class="cv-link btn" href="assets/Jae-Young-Suh-CV.pdf" target="_blank" rel="noopener">View CV (PDF)</a>
+      <div class="cv-group">
+        <a class="btn" href="cv/resume_en.pdf" target="_blank" rel="noopener">View CV (EN)</a>
+        <a class="btn" href="cv/resume_ko.pdf" target="_blank" rel="noopener">이력서 보기 (KO)</a>
+      </div>
     </aside>
 
     <!-- Right column: content -->
     <div class="content">
       <section id="about" aria-labelledby="about-h">
         <h1 class="h1" id="about-h">About me</h1>
-        <p>
-          I build conversational systems that feel more <em>human‑aware</em>—combining LLMs, speech, and visual embodiment
-          to support emotionally resonant interactions. Recent work explores voice‑based agents with Whisper + GPT‑4o and
-          Live2D, negotiation persona simulations, and domain‑specific assistants (e.g., tourism).
-        </p>
+        <p>I build conversational systems that integrate LLMs, speech, and visual embodiment to support emotionally aware interactions. Recent work explores voice‑based agents with Whisper + GPT‑4o and Live2D, persona‑driven negotiation simulations, and domain‑specific assistants (e.g., tourism).</p>
       </section>
 
       <section id="experience" aria-labelledby="exp-h">
         <h1 class="h1" id="exp-h">Experience</h1>
+
         <div class="item">
-          <div class="title">Senior AI Engineer — AIO2O</div>
-          <div class="meta">LLM apps, multimodal prototypes, retrieval, evaluation harness • 2022–2025</div>
-          <p>Built PoCs for voice agents, domain‑adaptive training, and itinerary assistants; led prompt/design iterations and latency reduction.</p>
+          <a class="title" href="#" target="_blank" rel="noopener">AIO2O Research Lab</a>
+          <div class="roleline"><span class="role">AI Engineer</span><span class="period">2023.09 ~ 2025.03</span></div>
+          <ul>
+            <li>Built PoCs for voice agents and domain‑adaptive LLM training; designed evaluation harness and retrieval flows.</li>
+            <li>Implemented Whisper‑based STT/TTS pipeline and Live2D‑linked responses for an embodied assistant.</li>
+            <li>Led prompt and UX iterations to reduce latency and improve persona consistency.</li>
+          </ul>
         </div>
-        <!-- Add more roles using the same .item block -->
+
+        <div class="item">
+          <a class="title" href="#" target="_blank" rel="noopener">VasgenBio R&D Center</a>
+          <div class="roleline"><span class="role">AI Researcher</span><span class="period">2022.03 ~ 2023.09</span></div>
+          <ul>
+            <li>Ran biomedical NER experiments with BioBERT/BioLinkBERT using SimpleTransformers and Flair.</li>
+            <li>Benchmarked models and documented results for internal reporting and reproducibility.</li>
+          </ul>
+        </div>
       </section>
 
       <section id="publications" aria-labelledby="pub-h">
         <h1 class="h1" id="pub-h">Publications</h1>
-        <!-- Example item matching the requested style (title → authors → venue) -->
         <div class="item">
-          <a class="title" href="#" target="_blank" rel="noopener">PanicToCalm: A Proactive Counseling Agent for Panic Attacks</a>
-          <div class="meta">Jihyun Lee, Yejin Min, San Kim, Yejin Jeon, SungJun Yang, Hyounghun Kim, Gary Lee</div>
-          <div class="meta">Proceedings of EMNLP 2025</div>
+          <a class="title" href="#" target="_blank" rel="noopener">A Modular Prototype of Emotion‑Aware Proactive Voice Agent with Live2D Embodiment</a>
+          <div class="meta">Jae Young Suh, Mingyu Jeon</div>
+          <div class="meta">submitted to ProActLLM 2025 (CIKM Workshop)</div>
         </div>
-        <!-- Duplicate the .item block for each publication -->
+        <div class="item">
+          <a class="title" href="#" target="_blank" rel="noopener">Mimicking Human Emotions: Persona‑Driven Behavior of LLMs in the ‘Buy and Sell’ Negotiation Game</a>
+          <div class="meta">mingyu jeon, Jae Young Suh</div>
+          <div class="meta">Language Gamification Workshop @ NeurIPS 2024 (Non‑archival)</div>
+        </div>
+        <div class="item">
+          <a class="title" href="#" target="_blank" rel="noopener">Teaching Large Language Models to Understand Jeju Island with Domain‑Adaptive Pretraining</a>
+          <div class="meta">Jaeyoung Suh, Eunchan Lee, Yohan Jeong, Donggil Park, Sungmin Ahn</div>
+          <div class="meta">FLLM 2024, pp. 21‑28</div>
+        </div>
+        <div class="item">
+          <a class="title" href="#" target="_blank" rel="noopener">Making a Prototype of Seoul Historical Sites Chatbot using LangChain</a>
+          <div class="meta">Jae Young Suh, Minsoo Kwak, Soo Yong Kim, Hyoungseo Cho</div>
+          <div class="meta">Journal of Electrical Electronics Engineering 3(1), 2024, pp. 01‑05</div>
+        </div>
+        <div class="item">
+          <a class="title" href="#" target="_blank" rel="noopener">ChatGPT의 한국어 처리 능력 검증과 고찰</a>
+          <div class="meta">김성우, 서재영, 박지원, 김동관</div>
+          <div class="meta">KSC 2023, pp. 286‑288</div>
+        </div>
+        <div class="item">
+          <a class="title" href="#" target="_blank" rel="noopener">Development of Speech Dialogue Systems for Social AI in Cooperative Game Environments</a>
+          <div class="meta">Jaeyoung Suh, et al.</div>
+          <div class="meta">IEEE TENSYMP 2021, pp. 1‑4</div>
+        </div>
       </section>
 
       <section id="projects" aria-labelledby="proj-h">
         <h1 class="h1" id="proj-h">Projects</h1>
         <div class="item">
-          <a class="title" href="#" target="_blank" rel="noopener">Voice‑based Emotion AI Agent</a>
-          <div class="meta">Whisper • GPT‑4o • Live2D • Streamlit/Vercel</div>
-          <p>Prototype for an emotion‑aware, embodied assistant; explores latency controls and persona consistency.</p>
+          <a class="title" href="#" target="_blank" rel="noopener">Live2D Voice Chatbot Demo</a>
+          <div class="date">2025.01 ~ 2025.06</div>
+          <ul>
+            <li>Connected OpenAI APIs with a Live2D sample character for reactive voice dialogue.</li>
+            <li>Deployed a Flask backend to Vercel; synchronized lip‑motion with audio output.</li>
+          </ul>
+          <div class="tech">Tech: gpt‑4o‑audio‑preview, Whisper, Flask, JavaScript, Vercel</div>
         </div>
         <div class="item">
-          <a class="title" href="#" target="_blank" rel="noopener">Tour_Recommend_Toy_Project</a>
-          <div class="meta">KTO TourAPI • LLM Retrieval • Card UI</div>
-          <p>Domain‑specific travel assistant for Korean tourism with succinct card‑style answers and source links.</p>
+          <a class="title" href="#" target="_blank" rel="noopener">LLM‑based Q&A / Recommender Prototypes</a>
+          <div class="date">2024</div>
+          <ul>
+            <li>Restaurant recommender using LangChain; prompt‑to‑SQL pipeline via OpenAI API.</li>
+            <li>Real‑estate search PoC with Crawl4AI + PandasAI + Streamlit.</li>
+          </ul>
+          <div class="tech">Tech: Python, OpenAI API, LangChain, PandasAI, Streamlit</div>
+        </div>
+        <div class="item">
+          <a class="title" href="#" target="_blank" rel="noopener">Jeju Tourism Domain‑Adaptive LLM Training</a>
+          <div class="date">2024</div>
+          <ul>
+            <li>Fine‑tuned Llama‑3/Polyglot‑ko on Jeju tourism data; summarized findings into publications.</li>
+          </ul>
+          <div class="tech">Tech: Python, PyTorch, Llama‑3, Hugging Face</div>
+        </div>
+        <div class="item">
+          <a class="title" href="#" target="_blank" rel="noopener">Biomedical NER Experiments</a>
+          <div class="date">2022</div>
+          <ul>
+            <li>Compared BioBERT/BioLinkBERT with SimpleTransformers/Flair on public biomedical datasets.</li>
+          </ul>
+          <div class="tech">Tech: Python, PyTorch, SimpleTransformers, Flair</div>
+        </div>
+        <div class="item">
+          <a class="title" href="#" target="_blank" rel="noopener">Social‑AI Voice Dialogue in Cooperative Game</a>
+          <div class="date">2021</div>
+          <ul>
+            <li>Rule‑based STT/TTS agent in “Don’t Starve Together”; collected user feedback for improvements.</li>
+          </ul>
+          <div class="tech">Tech: MS Azure STT/TTS, pyttsx3, Lua, OBS</div>
         </div>
       </section>
     </div>
   </main>
 
   <script>
-    // Optional: highlight active section in the floating nav
+    // Highlight active section in the floating nav
     (function(){
       const links = Array.from(document.querySelectorAll('.toc a'));
       const map = new Map(links.map(a => [document.querySelector(a.getAttribute('href')), a]));
