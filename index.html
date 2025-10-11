@@ -52,6 +52,14 @@
     .item .meta { color: var(--muted); font-size: 14px; margin-top: 4px; }
     .item .date { color: var(--muted); font-size: 13px; margin-top: 4px; }
     .item .tech { color: var(--muted); font-size: 12px; margin-top: 8px; }
+    .company-logo {
+      width: 18px;          /* 작게 표시 */
+      height: 18px;
+      vertical-align: middle; /* 텍스트 라인 중앙 정렬 */
+      margin-right: 6px;     /* 글자와 간격 */
+      border-radius: 4px;    /* 모서리 살짝 둥글게 (선택 사항) */
+      object-fit: contain;   /* 로고 비율 유지 */
+    }
 
     /* Experience layout */
     .roleline { display: flex; gap: 8px; flex-wrap: wrap; align-items: baseline; margin-top: 2px; }
@@ -98,6 +106,18 @@
         <a class="icon-btn" href="https://huggingface.co/dddsaty" target="_blank" rel="noopener" title="Hugging Face" aria-label="Hugging Face">
           <img src="img/hf-logo.png" alt="Hugging Face" />
         </a>
+        <!-- GitHub -->
+        <a class="icon-btn" href="https://github.com/tjwodud04" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.09.68-.22.68-.49 
+              0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.46-1.18-1.12-1.49-1.12-1.49-.91-.64.07-.63.07-.63 
+              1 .07 1.52 1.06 1.52 1.06.9 1.57 2.36 1.12 2.94.85.09-.67.35-1.12.63-1.38-2.22-.26-4.55-1.13-4.55-5.03 
+              0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.03a9.3 9.3 0 0 1 2.5-.34c.85 0 1.71.12 
+              2.5.34 1.9-1.3 2.75-1.03 2.75-1.03.55 1.4.2 2.44.1 2.7.64.71 1.03 1.62 1.03 2.73 
+              0 3.91-2.34 4.77-4.57 5.02.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 
+              0 .27.18.59.69.49A10.25 10.25 0 0 0 22 12.26C22 6.58 17.52 2 12 2z" />
+          </svg>
+        </a>
         <!-- Email -->
         <a class="icon-btn" href="mailto:tjwodud04@gmail.com" title="Email" aria-label="Email">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
@@ -107,8 +127,8 @@
       <div class="name">Jae Young Suh (서재영)</div>
 
       <div class="cv-group">
-        <a class="btn" href="cv/resume_en.pdf" target="_blank" rel="noopener">View CV (EN)</a>
-        <a class="btn" href="cv/resume_ko.pdf" target="_blank" rel="noopener">이력서 보기 (KO)</a>
+        <a class="btn" href="cv/resume_en.pdf" target="_blank" rel="noopener">View CV</a>
+        <a class="btn" href="cv/resume_ko.pdf" target="_blank" rel="noopener">이력서 보기</a>
       </div>
     </aside>
 
@@ -123,7 +143,7 @@
         <h1 class="h1" id="exp-h">Experience</h1>
 
         <div class="item">
-          <a class="title" href="#" target="_blank" rel="noopener">AIO2O Research Lab</a>
+          <a class="title" href="https://www.o2osolution.ai/kr/" target="_blank" rel="noopener"><img src="img/aio2o-logo.png" alt="AIO2O Logo" class="company-logo" />AIO2O</a>
           <div class="roleline"><span class="role">AI Engineer</span><span class="period">2023.09 ~ 2025.03</span></div>
           <ul>
             <li>Built PoCs for voice agents and domain‑adaptive LLM training; designed evaluation harness and retrieval flows.</li>
@@ -133,7 +153,7 @@
         </div>
 
         <div class="item">
-          <a class="title" href="#" target="_blank" rel="noopener">VasgenBio R&D Center</a>
+          <a class="title" href="https://basgenbio.com/en/index.php" target="_blank" rel="noopener"><img src="img/basgenbio-logo.png" alt="BasgenBio Logo" class="company-logo" />BasgenBio</a>
           <div class="roleline"><span class="role">AI Researcher</span><span class="period">2022.03 ~ 2023.09</span></div>
           <ul>
             <li>Ran biomedical NER experiments with BioBERT/BioLinkBERT using SimpleTransformers and Flair.</li>
@@ -150,29 +170,29 @@
           <div class="meta">submitted to ProActLLM 2025 (CIKM Workshop)</div>
         </div>
         <div class="item">
-          <a class="title" href="#" target="_blank" rel="noopener">Mimicking Human Emotions: Persona‑Driven Behavior of LLMs in the ‘Buy and Sell’ Negotiation Game</a>
+          <a class="title" href="https://drive.google.com/file/d/13SFxSFxOLnzVv2rFfh72B7-E8963O8Pe/view?usp=sharing" target="_blank" rel="noopener">Mimicking Human Emotions: Persona‑Driven Behavior of LLMs in the ‘Buy and Sell’ Negotiation Game</a>
           <div class="meta">mingyu jeon, Jae Young Suh</div>
           <div class="meta">Language Gamification Workshop @ NeurIPS 2024 (Non‑archival)</div>
         </div>
         <div class="item">
-          <a class="title" href="#" target="_blank" rel="noopener">Teaching Large Language Models to Understand Jeju Island with Domain‑Adaptive Pretraining</a>
+          <a class="title" href="https://drive.google.com/file/d/1igXZv3jbRMGPEcUGjzk3_RfJiG5R51po/view?usp=sharing" target="_blank" rel="noopener">Teaching Large Language Models to Understand Jeju Island with Domain‑Adaptive Pretraining</a>
           <div class="meta">Jaeyoung Suh, Eunchan Lee, Yohan Jeong, Donggil Park, Sungmin Ahn</div>
-          <div class="meta">FLLM 2024, pp. 21‑28</div>
+          <div class="meta">International Conference on Foundation and Large Language Models (FLLM) 2024, pp. 21‑28</div>
         </div>
         <div class="item">
-          <a class="title" href="#" target="_blank" rel="noopener">Making a Prototype of Seoul Historical Sites Chatbot using LangChain</a>
+          <a class="title" href="https://drive.google.com/file/d/1tp8dJFq_lJ10JkWCCf4BeNSQrGJuE6oa/view?usp=sharing" target="_blank" rel="noopener">Making a Prototype of Seoul Historical Sites Chatbot using LangChain</a>
           <div class="meta">Jae Young Suh, Minsoo Kwak, Soo Yong Kim, Hyoungseo Cho</div>
           <div class="meta">Journal of Electrical Electronics Engineering 3(1), 2024, pp. 01‑05</div>
         </div>
         <div class="item">
-          <a class="title" href="#" target="_blank" rel="noopener">ChatGPT의 한국어 처리 능력 검증과 고찰</a>
+          <a class="title" href="https://drive.google.com/file/d/121Cflgk949gn8MHtYWB91l9BOX5-VavB/view?usp=sharing" target="_blank" rel="noopener">ChatGPT의 한국어 처리 능력 검증과 고찰</a>
           <div class="meta">김성우, 서재영, 박지원, 김동관</div>
-          <div class="meta">KSC 2023, pp. 286‑288</div>
+          <div class="meta">Korea Computer Congress (KCC) 2023, pp. 286‑288</div>
         </div>
         <div class="item">
-          <a class="title" href="#" target="_blank" rel="noopener">Development of Speech Dialogue Systems for Social AI in Cooperative Game Environments</a>
+          <a class="title" href="https://drive.google.com/file/d/1i5Q0keLo0yVlwfKW39mVEOIScHe_VuRv/view?usp=sharing" target="_blank" rel="noopener">Development of Speech Dialogue Systems for Social AI in Cooperative Game Environments</a>
           <div class="meta">Jaeyoung Suh, et al.</div>
-          <div class="meta">IEEE TENSYMP 2021, pp. 1‑4</div>
+          <div class="meta">IEEE Region 10 Symposium (TENSYMP) 2021, pp. 1‑4</div>
         </div>
       </section>
 
