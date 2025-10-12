@@ -1,5 +1,5 @@
 (function () {
-  // Highlight active section (optional)
+  // Highlight active section in toc
   const links = Array.from(document.querySelectorAll('.toc a'));
   const map = new Map(links.map(a => [document.querySelector(a.getAttribute('href')), a]));
   const observer = new IntersectionObserver(entries => {
@@ -14,56 +14,67 @@
   }, { rootMargin: '-40% 0px -50% 0px', threshold: 0.01 });
   map.forEach((_, el) => el && observer.observe(el));
 
-  // Language toggle + persistence
   function showLang(lang) {
     const showEN = lang === 'en';
-    document.querySelector('[data-name="en"]').style.display = showEN ? 'inline' : 'none';
-    document.querySelector('[data-name="ko"]').style.display = showEN ? 'none' : 'inline';
-    document.querySelector('[data-cv="en"]').style.display = showEN ? '' : 'none';
-    document.querySelector('[data-cv="ko"]').style.display = showEN ? 'none' : '';
 
+    // Name & CV toggle
+    const nameEN = document.querySelector('[data-name="en"]');
+    const nameKO = document.querySelector('[data-name="ko"]');
+    const cvEN = document.querySelector('[data-cv="en"]');
+    const cvKO = document.querySelector('[data-cv="ko"]');
+    if (nameEN && nameKO) { nameEN.style.display = showEN ? 'inline' : 'none'; nameKO.style.display = showEN ? 'none' : 'inline'; }
+    if (cvEN && cvKO) { cvEN.style.display = showEN ? '' : 'none'; cvKO.style.display = showEN ? 'none' : ''; }
+
+    // Body content toggle (About/Experience/Projects)
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.style.display = (el.dataset.lang === lang) ? '' : 'none';
+    });
+
+    // Buttons active state
     document.querySelectorAll('.btn-lang').forEach(b => b.classList.toggle('active', b.dataset.toggleLang === lang));
 
-    const url = new URL(window.location);
-    url.searchParams.set('lang', lang);
-    history.replaceState({}, '', url);
-
+    // TOC labels
     const tocTitle = document.querySelector('.toc h4');
     const tocLinks = document.querySelectorAll('.toc a');
-    const labels = showEN
-      ? { title: 'NAV', about: 'About me', experience: 'Experience', publications: 'Publications', projects: 'Projects' }
-      : { title: '바로가기', about: '소개', experience: '경력', publications: '논문/발표', projects: '프로젝트' };
-    tocTitle.textContent = labels.title;
-    tocLinks[0].textContent = labels.about;
-    tocLinks[1].textContent = labels.experience;
-    tocLinks[2].textContent = labels.publications;
-    tocLinks[3].textContent = labels.projects;
+    if (tocTitle && tocLinks.length >= 4) {
+      const labels = showEN
+        ? { title: 'NAV', about: 'About me', experience: 'Experience', publications: 'Publications', projects: 'Projects' }
+        : { title: '바로가기', about: '소개', experience: '경력', publications: '논문/발표', projects: '프로젝트' };
+      tocTitle.textContent = labels.title;
+      tocLinks[0].textContent = labels.about;
+      tocLinks[1].textContent = labels.experience;
+      tocLinks[2].textContent = labels.publications;
+      tocLinks[3].textContent = labels.projects;
+    }
 
-    const subMeta = Array.from(document.querySelectorAll('#publications .item .meta')).find(m =>
-      /submitted to|제출/.test(m.textContent)
-    );
-    if (subMeta)
-      subMeta.textContent = showEN
+    // Publications localization lines
+    const submittedMeta = Array.from(document.querySelectorAll('#publications .item .meta'))
+      .find(m => /submitted to|제출/.test(m.textContent));
+    if (submittedMeta) {
+      submittedMeta.textContent = showEN
         ? 'submitted to ProActLLM 2025 (CIKM Workshop)'
         : 'ProActLLM 2025 (CIKM 워크숍) 에 제출';
-
-    const kccMeta = Array.from(document.querySelectorAll('#publications .item .meta'));
-    kccMeta.forEach(el => {
+    }
+    document.querySelectorAll('#publications .item .meta').forEach(el => {
       if (/Korea Computer Congress|한국컴퓨터종합학술대회/.test(el.textContent)) {
         el.textContent = showEN
           ? 'Korea Computer Congress (KCC) 2023, pp. 286-288'
           : '한국컴퓨터종합학술대회 (KCC) 2023, pp. 286-288';
       }
     });
+
+    // Update URL (?lang=)
+    const url = new URL(window.location);
+    url.searchParams.set('lang', lang);
+    history.replaceState({}, '', url);
+  }
+
+  // Bind language buttons after DOM ready
+  document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-toggle-lang]').forEach(btn =>
       btn.addEventListener('click', () => showLang(btn.dataset.toggleLang))
     );
-  }
-
-  document.querySelectorAll('[data-toggle-lang]').forEach(btn =>
-    btn.addEventListener('click', () => showLang(btn.dataset.toggleLang))
-  );
-
-  const params = new URLSearchParams(location.search);
-  showLang(params.get('lang') === 'ko' ? 'ko' : 'en');
+    const initLang = new URLSearchParams(location.search).get('lang') === 'ko' ? 'ko' : 'en';
+    showLang(initLang);
+  });
 })();
