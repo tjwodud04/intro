@@ -55,6 +55,9 @@
           : '한국컴퓨터종합학술대회 (KCC) 2023, pp. 286-288';
       }
     });
+    document.querySelectorAll('[data-toggle-lang]').forEach(btn =>
+      btn.addEventListener('click', () => showLang(btn.dataset.toggleLang))
+    );
   }
 
   document.querySelectorAll('[data-toggle-lang]').forEach(btn =>

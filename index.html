@@ -20,64 +20,235 @@
   <main class="page">
     <!-- Left column -->
     <aside class="profile" aria-label="Profile">
-      <div class="lang-toggle-left">
+      <!-- Language toggle -->
+      <div class="lang-toggle-left" aria-label="Language toggle">
         <button type="button" data-toggle-lang="en" class="btn-lang active">English</button>
         <button type="button" data-toggle-lang="ko" class="btn-lang">한국어</button>
       </div>
 
-      <div class="avatar">
+      <!-- Avatar -->
+      <div class="avatar" aria-hidden="true">
         <img src="img/character_img.jpg" alt="Portrait of Jae Young Suh" />
       </div>
 
-      <div class="icon-row">
-        <a class="icon-btn" href="https://scholar.google.com/citations?user=QpEwMCwAAAAJ&hl=ko" target="_blank">
-          <svg viewBox="0 0 24 24"><path d="M12 2 1 8l11 6 9-4.91V17h2V8L12 2z"/></svg>
+      <!-- Social icons -->
+      <div class="icon-row" aria-label="Profile links">
+        <!-- Google Scholar -->
+        <a class="icon-btn" href="https://scholar.google.com/citations?user=QpEwMCwAAAAJ&hl=ko" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 8l11 6 9-4.91V17h2V8L12 2zm0 8.7L4.62 8 12 3.96 19.38 8 12 10.7zM3 19.5C3 17.57 7.03 16 12 16s9 1.57 9 3.5S16.97 23 12 23s-9-1.57-9-3.5zm2 0c0 .86 2.91 2 7 2s7-1.14 7-2-2.91-2-7-2-7 1.14-7 2z"/></svg>
         </a>
-        <a class="icon-btn" href="https://www.linkedin.com/in/jaeyoungsuh/" target="_blank">
-          <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.6..."/></svg>
+        <!-- LinkedIn -->
+        <a class="icon-btn" href="https://www.linkedin.com/in/jaeyoungsuh/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.6c0-1.34-.02-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7H9.32V9h3.41v1.56h.05c.48-.9 1.66-1.85 3.42-1.85 3.66 0 4.34 2.41 4.34 5.54v6.2zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
         </a>
-        <a class="icon-btn" href="https://huggingface.co/dddsaty" target="_blank">
+        <!-- Hugging Face -->
+        <a class="icon-btn" href="https://huggingface.co/dddsaty" target="_blank" rel="noopener" title="Hugging Face" aria-label="Hugging Face">
           <img src="img/hf-logo.png" alt="Hugging Face" />
         </a>
-        <a class="icon-btn" href="https://github.com/tjwodud04" target="_blank">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58..."/></svg>
+        <!-- GitHub -->
+        <a class="icon-btn" href="https://github.com/tjwodud04" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.46-1.18-1.12-1.49-1.12-1.49-.91-.64.07-.63.07-.63 1 .07 1.52 1.06 1.52 1.06.9 1.57 2.36 1.12 2.94.85.09-.67.35-1.12.63-1.38-2.22-.26-4.55-1.13-4.55-5.03 0-1.11.39-2.02 1.03-2.73-.1-.26-.45-1.3.1-2.7 0 0 .84-.27 2.75 1.03.79-.22 1.65-.34 2.5-.34s1.71.12 2.5.34c1.9-1.3 2.75-1.03 2.75-1.03.55 1.4.2 2.44.1 2.7.64.71 1.03 1.62 1.03 2.73 0 3.91-2.34 4.77-4.57 5.02.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .27.18.59.69.49A10.25 10.25 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/>
+          </svg>
         </a>
-        <a class="icon-btn" href="mailto:tjwodud04@gmail.com">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0..."/></svg>
+        <!-- Email -->
+        <a class="icon-btn" href="mailto:tjwodud04@gmail.com" title="Email" aria-label="Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
       </div>
 
+      <!-- Name & CV -->
       <div class="name">
         <span data-name="en">Jae Young Suh</span>
         <span data-name="ko" style="display:none;">서재영</span>
       </div>
 
       <div class="cv-group">
-        <a class="btn" data-cv="en" href="cv/resume_en.pdf" target="_blank">View CV</a>
-        <a class="btn" data-cv="ko" href="cv/resume_ko.pdf" target="_blank" style="display:none;">이력서 보기</a>
+        <a class="btn" data-cv="en" href="cv/resume_en.pdf" target="_blank" rel="noopener">View CV</a>
+        <a class="btn" data-cv="ko" href="cv/resume_ko.pdf" target="_blank" rel="noopener" style="display:none;">이력서 보기</a>
       </div>
     </aside>
 
     <!-- Right column -->
     <div class="content">
-      <section id="about">
-        <h2 class="h2">About me</h2>
-        <p>I'm interested in how AI can act as a companion...</p>
+      <!-- About -->
+      <section id="about" aria-labelledby="about-h">
+        <h2 class="h2" id="about-h">About me</h2>
+
+        <!-- English -->
+        <p data-lang="en">
+          I'm interested in what components need to come together for AI to serve as a companion role in interactions
+          with users, and how those combinations can lead to meaningful experiences.
+        </p>
+
+        <!-- Korean -->
+        <p data-lang="ko" style="display:none;">
+          저는 AI가 사람과 상호작용 속에서 동반자처럼 기능하기 위해 어떤 요소들이 결합되어야 하는지,
+          그리고 그 조합이 어떻게 의미 있는 경험으로 이어질 수 있는지를 탐구하고 있습니다.
+        </p>
       </section>
 
-      <section id="experience">
-        <h2 class="h2">Experience</h2>
-        <!-- Company blocks -->
+      <!-- Experience -->
+      <section id="experience" aria-labelledby="exp-h">
+        <h2 class="h2" id="exp-h">Experience</h2>
+
+        <!-- English -->
+        <div data-lang="en">
+          <div class="item">
+            <a class="title" href="https://www.o2osolution.ai/" target="_blank" rel="noopener">
+              <img src="img/aio2o-logo.png" alt="AIO2O Logo" class="company-logo" />AIO2O
+            </a>
+            <div class="roleline"><span class="period">2023.09 ~ 2025.03</span></div>
+            <ul>
+              <li>Participated in government-funded and PoC projects, mainly focusing on LLM and AI development.</li>
+              <li>Contributed to OpenAI API usage, prompt optimization, Hugging Face model exploration, LoRA fine-tuning, and preparation of academic papers and technical documentation for projects.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <a class="title" href="https://basgenbio.com/en/index.php" target="_blank" rel="noopener">
+              <img src="img/basgenbio-logo.png" alt="BasgenBio Logo" class="company-logo" />BasgenBio
+            </a>
+            <div class="roleline"><span class="period">2022.03 ~ 2023.09</span></div>
+            <ul>
+              <li>Contributed to a Named Entity Recognition (NER) task requested by another department, and later assisted with bone image segmentation after team transfer.</li>
+              <li>Investigated and tested various models using Papers with Code and GitHub as primary references.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Korean -->
+        <div data-lang="ko" style="display:none;">
+          <div class="item">
+            <a class="title" href="https://www.o2osolution.ai/" target="_blank" rel="noopener">
+              <img src="img/aio2o-logo.png" alt="AIO2O Logo" class="company-logo" />AIO2O
+            </a>
+            <div class="roleline"><span class="period">2023.09 ~ 2025.03</span></div>
+            <ul>
+              <li>정부 지원 및 PoC 프로젝트에 참여하여 주로 LLM 및 AI 개발을 담당했습니다.</li>
+              <li>OpenAI API 활용, 프롬프트 최적화, Hugging Face 모델 탐색, LoRA 파인튜닝, 논문 및 기술 문서 작성 등에 기여했습니다.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <a class="title" href="https://basgenbio.com/en/index.php" target="_blank" rel="noopener">
+              <img src="img/basgenbio-logo.png" alt="BasgenBio Logo" class="company-logo" />BasgenBio
+            </a>
+            <div class="roleline"><span class="period">2022.03 ~ 2023.09</span></div>
+            <ul>
+              <li>타 부서 요청으로 수행된 개체명 인식(NER) 과제에 참여했으며, 이후 팀 이동 후 뼈 영상 분할 업무를 지원했습니다.</li>
+              <li>Papers with Code 및 GitHub을 중심으로 다양한 모델을 조사하고 실험했습니다.</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
-      <section id="publications">
-        <h2 class="h2">Publications</h2>
-        <!-- Paper list -->
+      <!-- Publications -->
+      <section id="publications" aria-labelledby="pub-h">
+        <h2 class="h2" id="pub-h">Publications</h2>
+
+        <div class="item">
+          <a class="title" href="#" target="_blank" rel="noopener">A Modular Prototype of Emotion-Aware Proactive Voice Agent with Live2D Embodiment</a>
+          <div class="meta">Jae Young Suh, Mingyu Jeon</div>
+          <!-- This line toggles text via script.js (submitted to ↔ 에 제출) -->
+          <div class="meta">submitted to ProActLLM 2025 (CIKM Workshop)</div>
+        </div>
+
+        <div class="item">
+          <a class="title" href="https://drive.google.com/file/d/13SFxSFxOLnzVv2rFfh72B7-E8963O8Pe/view?usp=sharing" target="_blank" rel="noopener">
+            Mimicking Human Emotions: Persona-Driven Behavior of LLMs in the ‘Buy and Sell’ Negotiation Game
+          </a>
+          <div class="meta">mingyu jeon, Jae Young Suh</div>
+          <div class="meta">Language Gamification Workshop @ NeurIPS 2024 (Non-archival)</div>
+        </div>
+
+        <div class="item">
+          <a class="title" href="https://drive.google.com/file/d/1igXZv3jbRMGPEcUGjzk3_RfJiG5R51po/view?usp=sharing" target="_blank" rel="noopener">
+            Teaching Large Language Models to Understand Jeju Island with Domain-Adaptive Pretraining
+          </a>
+          <div class="meta">Jaeyoung Suh, Eunchan Lee, Yohan Jeong, Donggil Park, Sungmin Ahn</div>
+          <div class="meta">International Conference on Foundation and Large Language Models (FLLM) 2024, pp. 21-28</div>
+        </div>
+
+        <div class="item">
+          <a class="title" href="https://drive.google.com/file/d/1tp8dJFq_lJ10JkWCCf4BeNSQrGJuE6oa/view?usp=sharing" target="_blank" rel="noopener">
+            Making a Prototype of Seoul Historical Sites Chatbot using LangChain
+          </a>
+          <div class="meta">Jae Young Suh, Minsoo Kwak, Soo Yong Kim, Hyoungseo Cho</div>
+          <div class="meta">Journal of Electrical Electronics Engineering 3(1), 2024, pp. 01-05</div>
+        </div>
+
+        <div class="item">
+          <a class="title" href="https://drive.google.com/file/d/121Cflgk949gn8MHtYWB91l9BOX5-VavB/view?usp=sharing" target="_blank" rel="noopener">
+            ChatGPT의 한국어 처리 능력 검증과 고찰
+          </a>
+          <div class="meta">김성우, 서재영, 박지원, 김동관</div>
+          <!-- This line toggles KCC label via script.js -->
+          <div class="meta">Korea Computer Congress (KCC) 2023, pp. 286-288</div>
+        </div>
+
+        <div class="item">
+          <a class="title" href="https://drive.google.com/file/d/1i5Q0keLo0yVlwfKW39mVEOIScHe_VuRv/view?usp=sharing" target="_blank" rel="noopener">
+            Development of Speech Dialogue Systems for Social AI in Cooperative Game Environments
+          </a>
+          <div class="meta">Jaeyoung Suh, et al.</div>
+          <div class="meta">IEEE Region 10 Symposium (TENSYMP) 2021, pp. 1-4</div>
+        </div>
       </section>
 
-      <section id="projects">
-        <h2 class="h2">Projects</h2>
-        <!-- Project list -->
+      <!-- Projects -->
+      <section id="projects" aria-labelledby="proj-h">
+        <h2 class="h2" id="proj-h">Projects</h2>
+
+        <!-- English -->
+        <div data-lang="en">
+          <div class="item">
+            <a class="title" href="https://github.com/tjwodud04/Vercel_CharacterChat" target="_blank" rel="noopener">
+              Live2D Voice Chatbot Demo
+            </a>
+            <div class="date">2025.01 ~ 2025.02</div>
+            <ul>
+              <li>Connected OpenAI APIs with a Live2D sample character for reactive voice dialogue.</li>
+            </ul>
+            <div class="tech">gpt-4o-audio-preview, Whisper, Flask, JavaScript, Vercel</div>
+          </div>
+
+          <div class="item">
+            <a class="title" href="https://github.com/tjwodud04/Master-Course-Project" target="_blank" rel="noopener">
+              Social-AI Voice Dialogue in Cooperative Game
+            </a>
+            <div class="date">2021.02 ~ 2022.02</div>
+            <ul>
+              <li>Contributed to the development of an early rule-based speech recognition system for a conversational agent in <i>Don't Starve Together</i>.</li>
+            </ul>
+            <div class="tech">MS Azure STT/TTS, pyttsx3, Lua, OBS</div>
+          </div>
+        </div>
+
+        <!-- Korean -->
+        <div data-lang="ko" style="display:none;">
+          <div class="item">
+            <a class="title" href="https://github.com/tjwodud04/Vercel_CharacterChat" target="_blank" rel="noopener">
+              Live2D 음성 챗봇 데모
+            </a>
+            <div class="date">2025.01 ~ 2025.02</div>
+            <ul>
+              <li>OpenAI API를 Live2D 샘플 캐릭터와 연동하여 실시간 음성 대화를 구현했습니다.</li>
+            </ul>
+            <div class="tech">gpt-4o-audio-preview, Whisper, Flask, JavaScript, Vercel</div>
+          </div>
+
+          <div class="item">
+            <a class="title" href="https://github.com/tjwodud04/Master-Course-Project" target="_blank" rel="noopener">
+              협동 게임 환경에서의 음성 기반 사회적 대화형 AI
+            </a>
+            <div class="date">2021.02 ~ 2022.02</div>
+            <ul>
+              <li><i>Don't Starve Together</i> 환경에서 작동하는 규칙 기반 음성 인식 대화 시스템 개발에 참여했습니다.</li>
+            </ul>
+            <div class="tech">MS Azure STT/TTS, pyttsx3, Lua, OBS</div>
+          </div>
+        </div>
       </section>
     </div>
   </main>
