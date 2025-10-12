@@ -135,35 +135,34 @@
     <!-- Right column: content -->
     <div class="content">
       <section id="about" aria-labelledby="about-h">
-        <h1 class="h1" id="about-h">About me</h1>
-        <p>I build conversational systems that integrate LLMs, speech, and visual embodiment to support emotionally aware interactions. Recent work explores voice‑based agents with Whisper + GPT‑4o and Live2D, persona‑driven negotiation simulations, and domain‑specific assistants (e.g., tourism).</p>
+        <h2 class="h2" id="about-h">About me</h2>
+        <p>I'm interested in what components need to come together for AI to serve as a companion role in interactions with users, and how those combinations can lead to meaningful experiences.</p>
       </section>
 
       <section id="experience" aria-labelledby="exp-h">
-        <h1 class="h1" id="exp-h">Experience</h1>
+        <h2 class="h2" id="exp-h">Experience</h2>
 
         <div class="item">
-          <a class="title" href="https://www.o2osolution.ai/kr/" target="_blank" rel="noopener"><img src="img/aio2o-logo.png" alt="AIO2O Logo" class="company-logo" />AIO2O</a>
-          <div class="roleline"><span class="role">AI Engineer</span><span class="period">2023.09 ~ 2025.03</span></div>
+          <a class="title" href="https://www.o2osolution.ai/" target="_blank" rel="noopener"><img src="img/aio2o-logo.png" alt="AIO2O Logo" class="company-logo" />AIO2O</a>
+          <div class="roleline"><span class="period">2023.09 ~ 2025.03</span></div>
           <ul>
-            <li>Built PoCs for voice agents and domain‑adaptive LLM training; designed evaluation harness and retrieval flows.</li>
-            <li>Implemented Whisper‑based STT/TTS pipeline and Live2D‑linked responses for an embodied assistant.</li>
-            <li>Led prompt and UX iterations to reduce latency and improve persona consistency.</li>
+            <li>Participated in government-funded and PoC projects, mainly focusing on LLM and AI development.</li>
+            <li>Contributed to OpenAI API usage, prompt optimization, Hugging Face model exploration, LoRA fine-tuning, and preparation of academic papers and technical documentation for projects.</li>            
           </ul>
         </div>
 
         <div class="item">
           <a class="title" href="https://basgenbio.com/en/index.php" target="_blank" rel="noopener"><img src="img/basgenbio-logo.png" alt="BasgenBio Logo" class="company-logo" />BasgenBio</a>
-          <div class="roleline"><span class="role">AI Researcher</span><span class="period">2022.03 ~ 2023.09</span></div>
+          <div class="roleline"><span class="period">2022.03 ~ 2023.09</span></div>
           <ul>
-            <li>Ran biomedical NER experiments with BioBERT/BioLinkBERT using SimpleTransformers and Flair.</li>
-            <li>Benchmarked models and documented results for internal reporting and reproducibility.</li>
+            <li>Contributed to a Named Entity Recognition (NER) task requested by another department, and later assisted with bone image segmentation after team transfer.</li>
+            <li>Investigated and tested various models using Papers with Code and GitHub as primary references.</li>
           </ul>
         </div>
       </section>
 
       <section id="publications" aria-labelledby="pub-h">
-        <h1 class="h1" id="pub-h">Publications</h1>
+        <h2 class="h2" id="pub-h">Publications</h2>
         <div class="item">
           <a class="title" href="#" target="_blank" rel="noopener">A Modular Prototype of Emotion‑Aware Proactive Voice Agent with Live2D Embodiment</a>
           <div class="meta">Jae Young Suh, Mingyu Jeon</div>
@@ -197,48 +196,22 @@
       </section>
 
       <section id="projects" aria-labelledby="proj-h">
-        <h1 class="h1" id="proj-h">Projects</h1>
+        <h2 class="h2" id="proj-h">Projects</h2>
         <div class="item">
-          <a class="title" href="#" target="_blank" rel="noopener">Live2D Voice Chatbot Demo</a>
-          <div class="date">2025.01 ~ 2025.06</div>
+          <a class="title" href="https://github.com/tjwodud04/Vercel_CharacterChat" target="_blank" rel="noopener">Live2D Voice Chatbot Demo</a>
+          <div class="date">2025.01 ~ 2025.02</div>
           <ul>
             <li>Connected OpenAI APIs with a Live2D sample character for reactive voice dialogue.</li>
-            <li>Deployed a Flask backend to Vercel; synchronized lip‑motion with audio output.</li>
           </ul>
-          <div class="tech">Tech: gpt‑4o‑audio‑preview, Whisper, Flask, JavaScript, Vercel</div>
-        </div>
+          <div class="tech">gpt‑4o‑audio‑preview, Whisper, Flask, JavaScript, Vercel</div>
+        </div>        
         <div class="item">
-          <a class="title" href="#" target="_blank" rel="noopener">LLM‑based Q&A / Recommender Prototypes</a>
-          <div class="date">2024</div>
+          <a class="title" href="https://github.com/tjwodud04/Master-Course-Project" target="_blank" rel="noopener">Social‑AI Voice Dialogue in Cooperative Game</a>
+          <div class="date">2021.02~2022.02</div>
           <ul>
-            <li>Restaurant recommender using LangChain; prompt‑to‑SQL pipeline via OpenAI API.</li>
-            <li>Real‑estate search PoC with Crawl4AI + PandasAI + Streamlit.</li>
+            <li>Contributed to the development of an early rule-based speech recognition system for a conversational agent in <i>Don't Starve Together</i>.</li>
           </ul>
-          <div class="tech">Tech: Python, OpenAI API, LangChain, PandasAI, Streamlit</div>
-        </div>
-        <div class="item">
-          <a class="title" href="#" target="_blank" rel="noopener">Jeju Tourism Domain‑Adaptive LLM Training</a>
-          <div class="date">2024</div>
-          <ul>
-            <li>Fine‑tuned Llama‑3/Polyglot‑ko on Jeju tourism data; summarized findings into publications.</li>
-          </ul>
-          <div class="tech">Tech: Python, PyTorch, Llama‑3, Hugging Face</div>
-        </div>
-        <div class="item">
-          <a class="title" href="#" target="_blank" rel="noopener">Biomedical NER Experiments</a>
-          <div class="date">2022</div>
-          <ul>
-            <li>Compared BioBERT/BioLinkBERT with SimpleTransformers/Flair on public biomedical datasets.</li>
-          </ul>
-          <div class="tech">Tech: Python, PyTorch, SimpleTransformers, Flair</div>
-        </div>
-        <div class="item">
-          <a class="title" href="#" target="_blank" rel="noopener">Social‑AI Voice Dialogue in Cooperative Game</a>
-          <div class="date">2021</div>
-          <ul>
-            <li>Rule‑based STT/TTS agent in “Don’t Starve Together”; collected user feedback for improvements.</li>
-          </ul>
-          <div class="tech">Tech: MS Azure STT/TTS, pyttsx3, Lua, OBS</div>
+          <div class="tech">MS Azure STT/TTS, pyttsx3, Lua, OBS</div>
         </div>
       </section>
     </div>
