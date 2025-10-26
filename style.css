@@ -12,8 +12,24 @@
     --fg: #e5e7eb;
     --muted: #9ca3af;
     --accent: #f3f4f6;
-    --line: #111827;
+    --line: #1f2937;
     --card: #0e1424;
+  }
+
+  /* 다크모드에서 버튼/아이콘 테두리 강조 */
+  .btn-lang, .icon-btn, .btn {
+    border-color: #374151;
+  }
+
+  /* 다크모드에서 그림자를 밝은 색으로 */
+  .icon-btn {
+    box-shadow: 0 1px 0 rgba(255,255,255,.04);
+  }
+  .btn {
+    box-shadow: 0 2px 0 rgba(255,255,255,.05);
+  }
+  .btn-lang.active {
+    box-shadow: 0 1px 0 rgba(255,255,255,.08);
   }
 }
 
