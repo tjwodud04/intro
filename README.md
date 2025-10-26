@@ -4,7 +4,6 @@
 
 This repository contains the source code for a personal GitHub.io portfolio page.
 The site introduces **Jae Young Suh (서재영)** and includes sections such as *About me*, *Experience*, *Publications*, and *Projects*.
-It is designed for clarity and minimalism, focusing on structured content rather than animation or effects.
 
 #### Structure
 
@@ -31,12 +30,6 @@ It is designed for clarity and minimalism, focusing on structured content rather
 The page is intended as a simple self-introduction hub —
 a single-page resume site for linking from GitHub, CVs, or conference submissions.
 
-#### Deployment
-
-1. Host the repository on GitHub with the name `<username>.github.io`.
-2. Ensure the `/img` and `/cv` directories contain referenced assets.
-3. Commit and push the repository — GitHub Pages will automatically deploy.
-
 ---
 
 ### 한국어
@@ -45,7 +38,6 @@ a single-page resume site for linking from GitHub, CVs, or conference submission
 
 이 저장소는 개인 포트폴리오 페이지(`github.io`)를 위한 소스 코드입니다.
 **서재영(Jae Young Suh)** 의 연구·경력·프로젝트를 간결하게 소개하기 위해 제작되었습니다.
-시각적 효과보다는 구조와 가독성 중심으로 구성되어 있습니다.
 
 #### 파일 구조
 
@@ -71,9 +63,3 @@ a single-page resume site for linking from GitHub, CVs, or conference submission
 
 이 페이지는 개인을 소개하기 위한 단일 웹페이지 형태의 이력서로,
 GitHub 프로필, 이력서, 학회 제출용 포트폴리오 링크 등으로 활용하기 위한 목적입니다.
-
-#### 배포 방법
-
-1. GitHub 저장소 이름을 `<사용자명>.github.io` 로 생성합니다.
-2. `/img`, `/cv` 폴더 내 파일 경로를 HTML과 일치시킵니다.
-3. `git push` 후 GitHub Pages에서 자동 배포됩니다.
