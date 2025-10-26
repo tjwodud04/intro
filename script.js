@@ -55,12 +55,12 @@
         // First paper: PPoGA
         el.textContent = showEN
           ? 'Accepted to GMLLM 2025 (Frontiers in Graph Machine Learning for the Large Model Era), CIKM 2025 Workshop'
-          : 'GMLLM 2025 (Frontiers in Graph Machine Learning for the Large Model Era), CIKM 2025 Workshop에 채택됨';
+          : 'GMLLM 2025 (Frontiers in Graph Machine Learning for the Large Model Era), CIKM 2025 Workshop 에 채택됨';
       } else if (idx === 1) {
         // Second paper: Emotion-Aware
         el.textContent = showEN
           ? 'Accepted to ProActLLM 2025 (Proactive Conversational Information Seeking with Large Language Models), CIKM 2025 Workshop'
-          : 'ProActLLM 2025 (Proactive Conversational Information Seeking with Large Language Models), CIKM 2025 Workshop에 채택됨';
+          : 'ProActLLM 2025 (Proactive Conversational Information Seeking with Large Language Models), CIKM 2025 Workshop 에 채택됨';
       }
     });
     document.querySelectorAll('#publications .item .meta').forEach(el => {
