@@ -48,13 +48,20 @@
     }
 
     // Publications localization lines
-    const submittedMeta = Array.from(document.querySelectorAll('#publications .item .meta'))
-      .find(m => /submitted to|제출/.test(m.textContent));
-    if (submittedMeta) {
-      submittedMeta.textContent = showEN
-        ? 'submitted to ProActLLM 2025 (CIKM Workshop)'
-        : 'ProActLLM 2025 (CIKM 워크숍) 에 제출';
-    }
+    const acceptedMetas = Array.from(document.querySelectorAll('#publications .item .meta'))
+      .filter(m => /Accepted to|채택됨/.test(m.textContent));
+
+    acceptedMetas.forEach(meta => {
+      if (/PPoGA/.test(meta.parentElement.textContent)) {
+        meta.textContent = showEN
+          ? 'Accepted to GMLLM 2025 (Frontiers in Graph Machine Learning for the Large Model Era), CIKM 2025 Workshop'
+          : 'GMLLM 2025 (그래프 머신러닝의 대규모 모델 시대 최전선), CIKM 2025 워크숍 에 채택됨';
+      } else if (/Emotion-Aware Proactive/.test(meta.parentElement.textContent)) {
+        meta.textContent = showEN
+          ? 'Accepted to ProActLLM 2025 (CIKM Workshop)'
+          : 'ProActLLM 2025 (CIKM 워크숍) 에 채택됨';
+      }
+    });
     document.querySelectorAll('#publications .item .meta').forEach(el => {
       if (/Korea Computer Congress|한국컴퓨터종합학술대회/.test(el.textContent)) {
         el.textContent = showEN
