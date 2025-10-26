@@ -70,8 +70,8 @@ a:hover { color: var(--accent); text-decoration: underline; }
   top: -24px;          /* 버튼 자체를 위로 이동 */
   margin-bottom: 36px; /* 버튼 아래(아바타와의) 간격 확대 */
 }
-.btn-lang { background: var(--bg); border: 1px solid var(--line); padding: 6px 10px; border-radius: 8px; font-weight: 600; cursor: pointer; }
-.btn-lang.active { background: var(--card); box-shadow: 0 1px 0 rgba(0,0,0,.08); }
+.btn-lang { background: var(--bg); border: 1px solid var(--line); padding: 6px 10px; border-radius: 8px; font-weight: 600; cursor: pointer; color: var(--fg); }
+.btn-lang.active { background: var(--card); box-shadow: 0 1px 0 rgba(0,0,0,.08); color: var(--fg); }
 
 .avatar {
   width: 180px; height: 180px; border-radius: 9999px; overflow: hidden;
