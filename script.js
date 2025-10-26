@@ -47,21 +47,34 @@
       tocLinks[3].textContent = labels.projects;
     }
 
-    // Publications localization lines
-    const acceptedMetas = Array.from(document.querySelectorAll('#publications .item .meta'))
-      .filter(m => /Accepted to|채택됨/.test(m.textContent));
+    // Publications localization for the first two papers
+    const pubItems = Array.from(document.querySelectorAll('#publications .item'));
 
-    acceptedMetas.forEach(meta => {
-      if (/PPoGA/.test(meta.parentElement.textContent)) {
-        meta.textContent = showEN
-          ? 'Accepted to GMLLM 2025 (Frontiers in Graph Machine Learning for the Large Model Era), CIKM 2025 Workshop'
-          : 'GMLLM 2025 (그래프 머신러닝의 대규모 모델 시대 최전선), CIKM 2025 워크숍 에 채택됨';
-      } else if (/Emotion-Aware Proactive/.test(meta.parentElement.textContent)) {
-        meta.textContent = showEN
-          ? 'Accepted to ProActLLM 2025 (CIKM Workshop)'
-          : 'ProActLLM 2025 (CIKM 워크숍) 에 채택됨';
+    // First paper: PPoGA
+    if (pubItems[0]) {
+      const meta = pubItems[0].querySelector('.meta');
+      const titleLink = meta.querySelector('a.title');
+      const titleText = titleLink.textContent;
+
+      if (showEN) {
+        meta.innerHTML = `Mingyu Jeon, Suwan Cho, and Jae Young Suh. "<a class="title" href="#" target="_blank" rel="noopener">${titleText}</a>." <span class="publication-status">Accepted to GMLLM 2025 (Frontiers in Graph Machine Learning for the Large Model Era), CIKM 2025 Workshop</span>`;
+      } else {
+        meta.innerHTML = `Mingyu Jeon, Suwan Cho, and Jae Young Suh. "<a class="title" href="#" target="_blank" rel="noopener">${titleText}</a>." <span class="publication-status">GMLLM 2025 (Frontiers in Graph Machine Learning for the Large Model Era), CIKM 2025 Workshop에 채택됨</span>`;
       }
-    });
+    }
+
+    // Second paper: Emotion-Aware
+    if (pubItems[1]) {
+      const meta = pubItems[1].querySelector('.meta');
+      const titleLink = meta.querySelector('a.title');
+      const titleText = titleLink.textContent;
+
+      if (showEN) {
+        meta.innerHTML = `Jae Young Suh and Mingyu Jeon. "<a class="title" href="#" target="_blank" rel="noopener">${titleText}</a>." <span class="publication-status">Accepted to ProActLLM 2025 (Proactive Conversational Information Seeking with Large Language Models), CIKM 2025 Workshop</span>`;
+      } else {
+        meta.innerHTML = `Jae Young Suh and Mingyu Jeon. "<a class="title" href="#" target="_blank" rel="noopener">${titleText}</a>." <span class="publication-status">ProActLLM 2025 (Proactive Conversational Information Seeking with Large Language Models), CIKM 2025 Workshop에 채택됨</span>`;
+      }
+    }
     document.querySelectorAll('#publications .item .meta').forEach(el => {
       if (/Korea Computer Congress|한국컴퓨터종합학술대회/.test(el.textContent)) {
         el.textContent = showEN
