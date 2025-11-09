@@ -18,7 +18,7 @@
 
   /* 다크모드에서 버튼/아이콘 테두리 강조 */
   .btn-lang, .icon-btn, .btn {
-    border-color: #374151;
+    border-color: #d1d5db;
   }
 
   /* 다크모드에서 그림자를 밝은 색으로 */
@@ -30,6 +30,11 @@
   }
   .btn-lang.active {
     box-shadow: 0 1px 0 rgba(255,255,255,.08);
+  }
+
+  /* 다크모드에서 AIPIA 로고 밝게 */
+  .company-logo {
+    filter: brightness(0) invert(1);
   }
 }
 
