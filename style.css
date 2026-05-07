@@ -44,6 +44,20 @@ body {
   font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial;
   color: var(--fg);
   background: var(--bg);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+img {
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  pointer-events: none;
+}
+
+a img, button img {
+  pointer-events: auto;
 }
 
 /* 링크 색상: 기본/visited/hover/active 모두 상속, hover만 살짝 강조 */

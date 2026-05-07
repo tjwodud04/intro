@@ -1,3 +1,22 @@
+// Security: block right-click, drag, copy, and reverse-engineering shortcuts
+(function () {
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('dragstart', e => e.preventDefault());
+  document.addEventListener('copy', e => e.preventDefault());
+  document.addEventListener('cut', e => e.preventDefault());
+  document.addEventListener('selectstart', e => e.preventDefault());
+
+  document.addEventListener('keydown', e => {
+    const ctrl = e.ctrlKey || e.metaKey;
+    const shift = e.shiftKey;
+    const k = e.key.toLowerCase();
+
+    if (e.key === 'F12') { e.preventDefault(); return; }
+    if (ctrl && shift && ['i', 'j', 'c'].includes(k)) { e.preventDefault(); return; }
+    if (ctrl && ['u', 's', 'a', 'c'].includes(k)) { e.preventDefault(); return; }
+  });
+})();
+
 (function () {
   // Highlight active section in toc
   const links = Array.from(document.querySelectorAll('.toc a'));
