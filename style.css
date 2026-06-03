@@ -128,6 +128,25 @@ section:last-of-type { border-bottom: none; }
 }
 #about .h2 { margin-top: 0; padding-top: 12px; }
 
+/* About me 내부 조판 (lead + 본문 + 도입줄 + 핵심 질문) */
+#about .lead { font-size: 1.18em; line-height: 1.5; font-weight: 600; margin: 0 0 16px; }
+#about .body { margin: 0 0 22px; }
+#about .lead-in { margin: 0 0 10px; color: var(--muted); }
+#about .q {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.2em;
+  line-height: 1.4;
+  margin: 0;
+  padding-left: 16px;
+  border-left: 2px solid var(--accent);
+}
+/* 한국어 질문: 명조 웹폰트 + 이탤릭 해제 (faux-italic 방지) */
+#about [data-lang="ko"] .q {
+  font-family: "Nanum Myeongjo", serif;
+  font-style: normal;
+}
+
 /* Cards */
 .item { padding: 14px; border: 1px solid var(--line); border-radius: 14px; margin: 12px 0; background: var(--bg); box-shadow: 0 1px 0 rgba(0,0,0,.03); }
 .item .title { font-weight: 700; }
