@@ -153,6 +153,8 @@ section:last-of-type { border-bottom: none; }
 .item .meta { color: var(--muted); font-size: 14px; margin-top: 4px; }
 .item .date { color: var(--muted); font-size: 13px; margin-top: 4px; }
 .item .tech { color: var(--muted); font-size: 12px; margin-top: 8px; }
+.item .lead-in { font-weight: 600; margin-top: 10px; }
+.item .lead-in + ul { margin-top: 6px; }
 
 /* 회사 로고(제목 옆 작은 아이콘) */
 .company-logo {
